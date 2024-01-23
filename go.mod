@@ -1,14 +1,21 @@
 module github.com/quickfixgo/fix50sp2
 
-go 1.19
+go 1.21
 
 require (
 	github.com/quickfixgo/enum v0.1.0
 	github.com/quickfixgo/field v0.1.0
 	github.com/quickfixgo/fixt11 v0.1.0
-	github.com/quickfixgo/quickfix v0.7.0
+	github.com/quickfixgo/quickfix v0.9.0
 	github.com/quickfixgo/tag v0.1.0
 	github.com/shopspring/decimal v1.3.1
+)
+
+replace (
+	github.com/quickfixgo/enum => github.com/alexppxela/quickfixgo-enum artexdict
+	github.com/quickfixgo/field => github.com/alexppxela/quickfixgo-field artexdict
+	github.com/quickfixgo/quickfix => github.com/alexppxela/quickfixgo artexdict
+	github.com/quickfixgo/tag => github.com/alexppxela/quickfixgo-tag artexdict
 )
 
 require (
