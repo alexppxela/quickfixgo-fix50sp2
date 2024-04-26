@@ -80,6 +80,11 @@ func (m OrderStatusRequest) SetOrderID(v string) {
 	m.Set(field.NewOrderID(v))
 }
 
+// SetOrigClOrdID sets OrigClOrdID, Tag 41.
+func (m OrderStatusRequest) SetOrigClOrdID(v string) {
+	m.Set(field.NewOrigClOrdID(v))
+}
+
 // SetSecurityID sets SecurityID, Tag 48.
 func (m OrderStatusRequest) SetSecurityID(v string) {
 	m.Set(field.NewSecurityID(v))
@@ -145,6 +150,15 @@ func (m OrderStatusRequest) GetOrderID() (v string, err quickfix.MessageRejectEr
 	return
 }
 
+// GetOrigClOrdID gets OrigClOrdID, Tag 41.
+func (m OrderStatusRequest) GetOrigClOrdID() (v string, err quickfix.MessageRejectError) {
+	var f field.OrigClOrdIDField
+	if err = m.Get(&f); err == nil {
+		v = f.Value()
+	}
+	return
+}
+
 // GetSecurityID gets SecurityID, Tag 48.
 func (m OrderStatusRequest) GetSecurityID() (v string, err quickfix.MessageRejectError) {
 	var f field.SecurityIDField
@@ -202,6 +216,11 @@ func (m OrderStatusRequest) HasSecurityIDSource() bool {
 // HasOrderID returns true if OrderID is present, Tag 37.
 func (m OrderStatusRequest) HasOrderID() bool {
 	return m.Has(tag.OrderID)
+}
+
+// HasOrigClOrdID returns true if OrigClOrdID is present, Tag 41.
+func (m OrderStatusRequest) HasOrigClOrdID() bool {
+	return m.Has(tag.OrigClOrdID)
 }
 
 // HasSecurityID returns true if SecurityID is present, Tag 48.
